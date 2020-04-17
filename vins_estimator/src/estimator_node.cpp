@@ -377,7 +377,7 @@ void process()
                 image[feature_id].emplace_back(camera_id,  xyz_uv_velocity);
             }
             
-            //处理图像特征
+            //处理图像特征，视觉与imu的初始化以及非线性优化的紧耦合
             estimator.processImage(image, img_msg->header);
 
             double whole_t = t_s.toc();

@@ -241,7 +241,7 @@ int main(int argc, char **argv)
     //读取yaml中的一些配置参数
     readParameters(n);
 
-    //读取每个相机实例对应的相机内参
+    //读取每个相机实例对应的相机内参 NUM_OF_CAM=1为单目
     for (int i = 0; i < NUM_OF_CAM; i++) 
         trackerData[i].readIntrinsicParameter(CAM_NAMES[i]);
 

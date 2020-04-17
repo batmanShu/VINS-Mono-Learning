@@ -34,13 +34,13 @@ class FeatureTracker
   public:
     FeatureTracker();
 
-    void readImage(const cv::Mat &_img,double _cur_time);
+    void readImage(const cv::Mat &_img,double _cur_time);//对图像使用光流法进行跟踪
 
-    void setMask();
+    void setMask();//对跟踪点进行排序并去除密集点
 
-    void addPoints();
+    void addPoints();//添将新检测到的特征点n_pts，ID初始化-1，跟踪次数1
 
-    bool updateID(unsigned int i);
+    bool updateID(unsigned int i);//更新特征点id
 
     void readIntrinsicParameter(const string &calib_file);
 
@@ -48,7 +48,7 @@ class FeatureTracker
 
     void rejectWithF();
 
-    void undistortedPoints();
+    void undistortedPoints();//对特征点的图像坐标去畸变矫正，并计算每个角点的速度
 
     cv::Mat mask;//图像掩码
     cv::Mat fisheye_mask;//鱼眼相机mask，用来去除边缘噪点
