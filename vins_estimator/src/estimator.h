@@ -125,7 +125,7 @@ class Estimator
     MarginalizationInfo *last_marginalization_info;
     vector<double *> last_marginalization_parameter_blocks;
 
-    //kay是时间戳，val是图像帧
+    //key是时间戳，val是图像帧
     //图像帧中保存了图像帧的特征点、时间戳、位姿Rt，预积分对象pre_integration，是否是关键帧。
     map<double, ImageFrame> all_image_frame;
     IntegrationBase *tmp_pre_integration;

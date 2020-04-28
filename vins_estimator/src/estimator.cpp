@@ -207,7 +207,6 @@ void Estimator::processImage(const map<int, vector<pair<int, Eigen::Matrix<doubl
                 last_P = Ps[WINDOW_SIZE];
                 last_R0 = Rs[0];
                 last_P0 = Ps[0];
-                
             }
             else
                 slideWindow();//初始化失败则直接滑动窗口
@@ -445,7 +444,7 @@ bool Estimator::visualInitialAlign()
     TicToc t_g;
     VectorXd x;
 
-    //计算陀螺仪偏置，尺度，重力加速度和速度
+    //计算陀螺仪偏置，尺度，重力加速度和速度，加速度记的偏置这里没有算
     bool result = VisualIMUAlignment(all_image_frame, Bgs, g, x);
     if(!result)
     {

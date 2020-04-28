@@ -269,7 +269,7 @@ int main(int argc, char **argv)
     //发布feature_img，实例ptr，跟踪的特征点图，给RVIZ用和调试用
     pub_match = n.advertise<sensor_msgs::Image>("feature_img",1000);
     //发布restart
-    pub_restart = n.advertise<std_msgs::Bool>("restart",1000);
+    pub_restart = n.advertifse<std_msgs::Bool>("restart",1000);
     /*
     if (SHOW_TRACK)
         cv::namedWindow("vis", cv::WINDOW_NORMAL);

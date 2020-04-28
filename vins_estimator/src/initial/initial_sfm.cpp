@@ -261,10 +261,12 @@ bool GlobalSFM::construct(int frame_num, Quaterniond* q, Vector3d* T, int l,
 		problem.AddParameterBlock(c_translation[i], 3);
 		if (i == l)
 		{
+			//把第l帧的旋转固定
 			problem.SetParameterBlockConstant(c_rotation[i]);
 		}
 		if (i == l || i == frame_num - 1)
 		{
+			//把第l帧的位移固定
 			problem.SetParameterBlockConstant(c_translation[i]);
 		}
 	}
